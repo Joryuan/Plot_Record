@@ -42,3 +42,25 @@
 | `'p'`    | 五角形   | ![Sample of pentagram marker](https://ww2.mathworks.cn/help/matlab/ref/marker_p.png) |
 | `'h'`    | 六角形   | ![Sample of hexagram marker](https://ww2.mathworks.cn/help/matlab/ref/marker_h.png) |
 | `'none'` | 无标记   | 不适用                                                       |
+
+# Matlab - plot Tex Font setting
+
+- `\bf`
+- `\it`
+- `\sl`
+- `\rm`
+- `\fontname{宋体}`
+- `\fontsize{16}`
+- `\color{red(green yellow magenta blue black white cyan gray barkGreen orange lightblue)}`
+- `_`为下标
+- `^`为上标
+
+![img](https://img-blog.csdnimg.cn/20210105143627512.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ1NTU4MQ==,size_16,color_FFFFFF,t_70)
+
+![img](https://img-blog.csdnimg.cn/20210105143653133.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ1NTU4MQ==,size_16,color_FFFFFF,t_70)
+
+![img](https://img-blog.csdnimg.cn/20210105143639152.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ1NTU4MQ==,size_16,color_FFFFFF,t_70)
+
+## Reference
+
+<https://jingyan.baidu.com/article/c74d6000b0d41a0f6a595d29.html>
