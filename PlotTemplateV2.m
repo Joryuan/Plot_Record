@@ -1,3 +1,13 @@
+%% =========================================
+% File Name:    Plot Template Version 2
+% Description:  None
+% Author:       Zhu Shuaiyuan
+% Release Data: Fri Feb.10 2023
+% History:      1.Data:     Author:
+%               Modification:
+%               2.Data:     Author:
+%               Modification:
+% ==============================================
 %% 新建窗口并设置窗口属性
 %创建第一个figure图窗对象，父类为Screen
 fig1 = figure(1);
@@ -69,6 +79,37 @@ ax1.YLabel.Interpreter = 'LaTex';
 ax1.YLabel.FontSize = fontsize;
 ax1.YLabel.String = '$Fre/Hz$';
 
+% 设置子图
+suba1 = axes(fig1,'Position',[0.25,0.34,0.35,0.08]);
+plot(ScopeData1.time,ScopeData1.signals(1).values(:,2) - ScopeData1.signals(1).values(:,1),'linewidth',2);
+suba1.FontSize = 10;
+suba1.FontName = fontname; 
+suba1.XLim = [0.040,0.050];
+suba1.XTick = (0.040:0.002:0.050);
+suba1.YLim = [-0.0050,0.0050];
+grid on;
+
+suba2 = axes(fig1,'Position',[0.38,0.15,0.50,0.08]); 
+plot(ScopeData1.time,ScopeData1.signals(1).values(:,2) - ScopeData1.signals(1).values(:,1),'linewidth',2);
+suba2.FontSize = 10;
+suba2.FontName = fontname; 
+suba2.XLim = [0.0557,0.0667];
+suba2.XTick = (0.0557:0.002:0.0667);
+suba2.YLim = [-0.005,0.005];
+grid on;
+
+% 绘制辅助矩形框
+rect1 = rectangle(ax1);
+rect1.Position = [0.041 -0.005 0.009 0.01];
+rect1.LineStyle = '--';
+rect1.LineWidth = 1.0;
+rect1.EdgeColor = "r";
+
+rect2 = rectangle(ax1);
+rect2.Position = [0.058 -0.005 0.009 0.01];
+rect2.LineStyle = '--';
+rect2.LineWidth = 1.0;
+rect2.EdgeColor = "r";
 
 %% 在所建窗口上绘图
 %将当前图窗设置为fig1
