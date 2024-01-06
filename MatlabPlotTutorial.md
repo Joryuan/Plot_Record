@@ -149,9 +149,25 @@ r = rectangle(___);                        % 返回矩形对象。在创建矩�
 
 
 
+# 7 绘图代码编写思路
+
 创建cell对象haxes 循环赋值所有的subplot句柄 此时haxes包含所有的subplot句柄
 
 length获取haxes长度，循环更改相同的值，如坐标轴字体大小等属性；
+
+# 8 一些用到的函数
+
+`findobj`
+
+`get`
+
+`set`
+
+
+
+# 8 参数说明
+
+
 
 ## Line Color
 
@@ -219,3 +235,52 @@ length获取haxes长度，循环更改相同的值，如坐标轴字体大小等
 ## Reference
 
 <https://jingyan.baidu.com/article/c74d6000b0d41a0f6a595d29.html>
+
+# 9 绘制 GIF
+
+用到的函数：
+
+```matlab
+F = getframe         % 捕获显示在屏幕上当前坐标区作为影片帧。F是一个包含图像数据的结构体。getframe按照屏幕上显示的大小捕获这些坐标区，并不捕获坐标区轮廓外部的刻度标签或者其他内容
+F = getframe(ax)     % 捕获ax标识的坐标区而非当前坐标区、
+F = getframe(fig)    % 捕获由fig标识的图窗，如果需要捕获图窗窗口的整个内部区域（包括坐标区标题、标签和刻度线），则制定一个图窗。捕获的影片帧不包括图窗菜单和工具栏。
+```
+
+
+
+```matlab
+[X,map] = frame2im(F); % 从单个影片帧F返回索引图像数据X和关联的颜色图Map。输出Map是一个三列矩阵，其中举证每一行是一个RGB三元值，用于定义颜色图的一种颜色。如果该帧包含真彩色数据，则Map为空。函数getframe和im2frame创建影片帧。
+```
+
+
+
+```matlab
+[X,map] = rgb2ind(RGB,n) % 使用最小方差量化和抖动将RGB图像转换为索引图像X。map最多包含n个颜色，n必须小于65536
+```
+
+
+
+```matlab
+imwrite(A,filename)      % 将图像数据A写入filename指定的文件，并从扩展名推断出文件格式。imwrite在当前文件夹中创建新文件。输出图像的位深度取决于A的数据类型和文件格式。
+imwrite(A,map,filename)  % 
+
+imwrite(__,fmt)
+
+imwrite(__,Name,Value)
+```
+
+
+
+```matlab
+cla; % 清楚当前axes中的所有图形
+```
+
+# 10 compass （绘制从原点出发的箭头）
+
+
+
+# 11 annotation
+
+## TextBos 属性
+
+[文本框的外观和行为 - MATLAB - MathWorks 中国](https://ww2.mathworks.cn/help/matlab/ref/matlab.graphics.shape.textbox-properties.html)
